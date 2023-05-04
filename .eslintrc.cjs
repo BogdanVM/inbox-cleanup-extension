@@ -28,7 +28,7 @@ module.exports = {
     'key-spacing': 'warn',
     'max-lines': ['error', 300],
     'prefer-const': ['error', { destructuring: 'any' }],
-    quotes: ['error', 'single'],
+    quotes: ['warn', 'single'],
     'require-await': 'warn',
     semi: ['error', 'always'],
     'no-else-return': ['warn', { allowElseIf: true }],

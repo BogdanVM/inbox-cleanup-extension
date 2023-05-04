@@ -1,27 +1,39 @@
 <script setup lang="ts">
+import ExtensionFooter from '@Core/ui/ExtensionFooter.vue';
+import ExtensionHeader from '@Core/ui/ExtensionHeader.vue';
 import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <header>
-    <h1>Inbox Cleanup Service</h1>
-    <img src="./assets/logo.svg" alt="logo" width="50" height="50" />
+  <header id="extensionHeader">
+    <ExtensionHeader />
   </header>
-
   <RouterView />
+  <footer id="extensionFooter">
+    <ExtensionFooter />
+  </footer>
 </template>
 
-<style lang="scss" scoped>
-body {
-  background: #003d5b;
-}
-header {
-  display: flex;
+<style lang="scss">
+#app {
+  background: $primary-color-dark;
+  min-width: 350px;
+  padding: 16px 12px !important;
 
-  h1 {
-    color: #d4fcc3;
-    font-family: 'Unica One', cursive;
-    font-size: 20px;
+  #extensionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $primary-color-light;
+    padding-bottom: 12px;
+  }
+
+  #extensionFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $primary-color-light;
+    padding-top: 12px;
   }
 }
 </style>
