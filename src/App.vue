@@ -59,6 +59,13 @@ $height: 400px;
 
   main {
     flex: 2;
+    padding: 28px 12px;
+    display: flex;
+    flex-direction: column;
   }
+}
+
+a {
+  color: $accent-color !important;
 }
 </style>

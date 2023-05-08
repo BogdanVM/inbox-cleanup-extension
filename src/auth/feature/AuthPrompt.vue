@@ -19,4 +19,33 @@ function termsToggled(selected: boolean) {
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.auth-container {
+  color: var(--v-theme-primary);
+  font-family: $primary-font-family;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+
+  h3 {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+a {
+  font-weight: 700;
+  text-decoration: underline;
+}
+</style>
