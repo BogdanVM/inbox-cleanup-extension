@@ -13,7 +13,6 @@ if (appElement) {
 
 <template>
   <v-app theme="primary" full-height class="container" :class="appStore.currentTheme">
-    <!-- <div class="container" :class="appStore.currentTheme"> -->
     <header id="extensionHeader">
       <ExtensionHeader />
     </header>
@@ -24,7 +23,6 @@ if (appElement) {
       <ExtensionFooter />
     </footer>
   </v-app>
-  <!-- </div> -->
 </template>
 
 <style lang="scss">

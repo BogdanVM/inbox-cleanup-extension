@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import GoogleLogo from '@/assets/google_logo.png';
+import RoundedButton from '@/shared/components/RoundedButton.vue';
 import Checkbox from '@Auth/ui/CheckboxComponent.vue';
 
 function termsToggled(selected: boolean) {
@@ -16,6 +18,10 @@ function termsToggled(selected: boolean) {
       I have read and accept the <a href="#">Terms and Conditions</a> and
       <a href="#"> Privacy Policy</a>
     </Checkbox>
+    <RoundedButton :onClick="() => console.log('Signing in...')">
+      <img class="google-logo" :src="GoogleLogo" alt="Google Logo" />
+      Sign in
+    </RoundedButton>
   </div>
 </template>
 
@@ -41,6 +47,12 @@ function termsToggled(selected: boolean) {
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
+  }
+
+  .google-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
   }
 }
 

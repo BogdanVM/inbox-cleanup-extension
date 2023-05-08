@@ -9,6 +9,8 @@ const active = ref(props.active);
 
 <template>
   <v-switch
+    density="comfortable"
+    inset
     class="custom-switch"
     theme="primary"
     v-model="active"
@@ -24,7 +26,7 @@ h1 {
 }
 
 .custom-switch {
-  height: 30px;
+  height: 12px;
   display: flex;
   justify-content: flex-end;
   align-items: center;

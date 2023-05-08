@@ -24,6 +24,7 @@ span {
   color: var(--v-theme-primary);
   font-family: $primary-font-family;
   font-size: 10px;
+  font-weight: 500;
 }
 
 .theme-toggle-container {
