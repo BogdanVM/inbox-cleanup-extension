@@ -4,3 +4,13 @@ $accent-color: #f45b69;
 
 $primary-font-family: 'Saira Condensed', sans-serif;
 $logo-font-family: 'Unica One', cursive;
+
+.dark-theme {
+  --v-theme-primary: #{$primary-color-light};
+  --v-theme-background: #{$primary-color-dark};
+}
+
+.light-theme {
+  --v-theme-primary: #{$primary-color-dark};
+  --v-theme-background: #{$primary-color-light};
+}

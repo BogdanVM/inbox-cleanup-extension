@@ -1,14 +1,33 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Logo from '@/assets/logo.svg';
+</script>
 
 <template>
   <h1>Inbox Cleanup Service</h1>
-  <img src="@/assets/logo.svg" alt="logo" width="30" height="30" />
+  <Logo class="extension-logo" />
 </template>
 
 <style lang="scss" scoped>
 h1 {
-  color: $primary-color-light;
+  color: var(--v-theme-primary);
   font-family: $logo-font-family;
   font-size: 20px;
+}
+
+.extension-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.dark-theme {
+  .extension-logo {
+    fill: $primary-color-light;
+  }
+}
+
+.light-theme {
+  .extension-logo {
+    fill: $primary-color-dark;
+  }
 }
 </style>
