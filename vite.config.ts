@@ -21,6 +21,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@Auth': fileURLToPath(new URL('./src/auth', import.meta.url)),
       '@Core': fileURLToPath(new URL('./src/core', import.meta.url)),
+      '@Dashboard': fileURLToPath(new URL('./src/dashboard', import.meta.url)),
+      '@Router': fileURLToPath(new URL('./src/router', import.meta.url)),
       '@Shared': fileURLToPath(new URL('./src/shared', import.meta.url))
     }
   },

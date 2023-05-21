@@ -7,9 +7,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@Auth/*": ["./src/auth/*"],
-      "@Core/*": ["./src/core/*"],
-      "@Shared/*": ["./src/shared/*"]
+      "@Auth": ["./src/auth"],
+      "@Core": ["./src/core"],
+      "@Dashboard": ["./src/dashboard"],
+      "@Router": ["./src/router"],
+      "@Shared": ["./src/shared"]
     }
   }
 }

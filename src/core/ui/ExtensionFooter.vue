@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import DarkThemeIcon from '@/assets/dark_theme.svg';
 import LightThemeIcon from '@/assets/light_theme.svg';
-import { useAppStore } from '@Core/data-access/app.state';
-import SwitchToggle from '@Shared/components/SwitchToggle.vue';
+import { useAppStore } from '@Core';
+import { SwitchToggle } from '@Shared';
 
 const appStore = useAppStore();
 function switchToggled() {

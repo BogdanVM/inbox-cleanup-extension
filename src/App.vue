@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { useAppStore } from '@Core/data-access/app.state';
-import ExtensionFooter from '@Core/ui/ExtensionFooter.vue';
-import ExtensionHeader from '@Core/ui/ExtensionHeader.vue';
+import { ExtensionFooter, ExtensionHeader, useAppStore } from '@Core';
 import { RouterView } from 'vue-router';
 
 const appStore = useAppStore();

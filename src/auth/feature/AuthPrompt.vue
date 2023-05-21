@@ -1,20 +1,30 @@
 <script setup lang="ts">
 /// <reference types="chrome"/>
 import GoogleLogo from '@/assets/google_logo.png';
-import RoundedButton from '@/shared/components/RoundedButton.vue';
-import { useAuthStore } from '@Auth/data-access/auth.state';
-import Checkbox from '@Auth/ui/CheckboxComponent.vue';
-import { useAppStore } from '@Core/data-access/app.state';
-import { from, switchMap, take, withLatestFrom } from 'rxjs';
+import { Checkbox, useAuthStore } from '@Auth';
+import { useAppStore } from '@Core';
+import { AppRoutes } from '@Router';
+import type { LocalChromeStorage } from '@Shared';
+import { ChromeStorage, RoundedButton } from '@Shared';
+import { delay, from, switchMap, take } from 'rxjs';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-const acceptedTerms = ref(false);
 const appStore = useAppStore();
 const authStore = useAuthStore();
+const router = useRouter();
+
+const acceptedTerms = ref(false);
 
 function termsToggled(selected: boolean) {
   acceptedTerms.value = selected;
 }
+
+// function initOAuthSignIn() {
+//   const getProfileUserInfo$ = from(chrome.identity.getProfileUserInfo({}));
+
+//   getProfileUserInfo$.pipe(take(1)).subscribe(userInfo => )
+// }
 
 const onSignIn = () => {
   appStore.toggleLoading();
@@ -24,19 +34,24 @@ const onSignIn = () => {
 
   getAuthToken$
     .pipe(
-      switchMap((_) => getProfileUserInfo$.pipe(withLatestFrom(getAuthToken$))),
+      switchMap(({ token }) => {
+        if (typeof token !== 'string') {
+          // TODO: Show error here
+          throw new Error('Not good');
+        }
+
+        authStore.updateGoogleAccessToken(token);
+        return from(ChromeStorage.set<LocalChromeStorage>('accessToken', token));
+      }),
+      switchMap((_) => getProfileUserInfo$),
+      delay(500),
       take(1)
     )
-    .subscribe(([userInfo, { token }]) => {
-      if (typeof token !== 'string') {
-        // TODO: Show error here
-        throw new Error('Not good');
-      }
-
-      authStore.updateGoogleAccessToken(token);
+    .subscribe((userInfo) => {
       authStore.saveUser(userInfo);
-
       appStore.toggleLoading();
+
+      router.push(AppRoutes.DASHBOARD);
     });
 };
 </script>
