@@ -5,14 +5,10 @@ import ExtensionHeader from '@Core/ui/ExtensionHeader.vue';
 import { RouterView } from 'vue-router';
 
 const appStore = useAppStore();
-const appElement = document.getElementById('app');
-if (appElement) {
-  appElement.classList.add(appStore.currentTheme);
-}
 </script>
 
 <template>
-  <v-app theme="primary" full-height class="container" :class="appStore.currentTheme">
+  <v-app theme="primary" full-height class="container" :class="[appStore.currentTheme]">
     <header id="extensionHeader">
       <ExtensionHeader />
     </header>
@@ -55,7 +51,7 @@ $height: 400px;
     flex: 1;
   }
 
-  main {
+  #extensionMain {
     flex: 2;
     padding: 28px 12px;
     display: flex;

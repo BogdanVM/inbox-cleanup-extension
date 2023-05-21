@@ -35,7 +35,16 @@ module.exports = {
     'no-shadow': 'warn',
     'no-trailing-spaces': 'warn',
     'no-unneeded-ternary': ['warn', { defaultAssignment: false }],
-    'no-unused-vars': ['warn', { args: 'none', argsIgnorePattern: '^_$', vars: 'local' }],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        vars: 'local'
+      }
+    ],
     'no-unreachable': 'error',
     'no-var': 'error'
   }
