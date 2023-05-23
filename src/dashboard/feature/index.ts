@@ -1,1 +1,1 @@
-export * as Dashboard from './DashboardComponent.vue';
+export { default as Dashboard } from './DashboardComponent.vue';

@@ -1,1 +1,1 @@
-export * as AuthPrompt from './AuthPrompt.vue';
+export { default as AuthPrompt } from './AuthPrompt.vue';

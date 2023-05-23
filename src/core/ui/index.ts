@@ -1,2 +1,2 @@
-export * as ExtensionFooter from './ExtensionFooter.vue';
-export * as ExtensionHeader from './ExtensionHeader.vue';
+export { default as ExtensionFooter } from './ExtensionFooter.vue';
+export { default as ExtensionHeader } from './ExtensionHeader.vue';

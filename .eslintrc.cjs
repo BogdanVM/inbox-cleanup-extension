@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    'no-console': 'warn',
+    'no-console': 'error',
     'arrow-parens': ['warn', 'always'],
     camelcase: ['error', { properties: 'never', ignoreImports: true }],
     'comma-spacing': ['error', { before: false, after: true }],

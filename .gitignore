@@ -29,3 +29,4 @@ coverage
 *.sw?
 
 manifest.json
+pnpm-lock.yaml
