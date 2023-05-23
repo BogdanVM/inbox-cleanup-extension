@@ -1,27 +1,63 @@
 <script setup lang="ts">
+import { ExtensionFooter, ExtensionHeader, useAppStore } from '@Core';
 import { RouterView } from 'vue-router';
+
+const appStore = useAppStore();
 </script>
 
 <template>
-  <header>
-    <h1>Inbox Cleanup Service</h1>
-    <img src="./assets/logo.svg" alt="logo" width="50" height="50" />
-  </header>
-
-  <RouterView />
+  <v-app theme="primary" full-height class="container" :class="[appStore.currentTheme]">
+    <header id="extensionHeader">
+      <ExtensionHeader />
+    </header>
+    <main id="extensionMain">
+      <RouterView />
+    </main>
+    <footer id="extensionFooter">
+      <ExtensionFooter />
+    </footer>
+  </v-app>
 </template>
 
-<style lang="scss" scoped>
-body {
-  background: #003d5b;
-}
-header {
-  display: flex;
+<style lang="scss">
+$height: 400px;
 
-  h1 {
-    color: #d4fcc3;
-    font-family: 'Unica One', cursive;
-    font-size: 20px;
+#app {
+  padding: 0 !important;
+}
+.container {
+  background: var(--v-theme-background) !important;
+  min-width: 350px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 12px;
+
+  #extensionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--v-theme-primary);
+    flex: 1;
   }
+
+  #extensionFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--v-theme-primary);
+    flex: 1;
+  }
+
+  #extensionMain {
+    flex: 2;
+    padding: 28px 12px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+a {
+  color: $accent-color !important;
 }
 </style>

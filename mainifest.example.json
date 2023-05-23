@@ -3,8 +3,14 @@
   "name": "Inbox Cleanup Service",
   "description": "Service that allows cleanup for the gmail inbox",
   "version": "1.0",
+  "key": "THE_CHROME_EXTENSION_KEY",
   "action": {
     "default_popup": "index.html",
     "default_icon": "logo.png"
-  }
+  },
+  "oauth2": {
+    "client_id": "YOUR_CLIENT_ID",
+    "scopes": ["ALLOWED_OAUTH_SCOPES"]
+  },
+  "permissions": ["ALLOWED_OAUTH_PERMISSIONS"]
 }

@@ -6,7 +6,12 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@Auth": ["./src/auth"],
+      "@Core": ["./src/core"],
+      "@Dashboard": ["./src/dashboard"],
+      "@Router": ["./src/router"],
+      "@Shared": ["./src/shared"]
     }
   }
 }
