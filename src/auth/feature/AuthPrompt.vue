@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /// <reference types="chrome"/>
-import GoogleLogo from '@/assets/google_logo.png';
+import { GoogleLogo } from '@Assets';
 import { Checkbox, useAuthStore } from '@Auth';
 import { useAppStore } from '@Core';
 import { AppRoutes } from '@Router';

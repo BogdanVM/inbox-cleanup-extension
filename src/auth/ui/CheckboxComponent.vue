@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CheckedIcon from '@/assets/checked.svg';
+import { CheckedIcon } from '@Assets';
 import { defineProps, reactive, ref } from 'vue';
 
 defineEmits(['changed']);
