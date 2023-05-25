@@ -67,6 +67,7 @@ label {
     top: 0;
     left: 0;
     z-index: 1;
+    fill: $accent-color;
   }
 }
 </style>
