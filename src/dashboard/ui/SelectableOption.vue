@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { InfoCircle } from '@Assets';
+import { InfoCircle, WarningIcon } from '@Assets';
+import { useAppStore } from '@Core';
 import { defineEmits, defineProps } from 'vue';
 
 defineEmits(['option-selected']);
@@ -9,6 +10,8 @@ defineProps<{
   icon: string;
   name: string;
 }>();
+
+const appStore = useAppStore();
 </script>
 
 <template>
@@ -28,12 +31,25 @@ defineProps<{
     </div>
 
     <div class="info-circle-wrapper">
+      <v-tooltip
+        activator="parent"
+        location="top"
+        id="info-tooltip"
+        :class="appStore.nightTheme ? 'dark-overlay' : 'light-overlay'"
+      >
+        <WarningIcon class="warning-icon" />
+        <p>
+          Delete all the emails from the Promotion section. In order to save an email, you need to
+          <u>attach another label to it.</u>
+        </p>
+        <h3>THIS OPERATION IS IRREVERSIBLE</h3>
+      </v-tooltip>
       <InfoCircle class="info-circle" />
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .selectable-option-wrapper {
   display: flex;
   justify-content: space-between;
@@ -82,7 +98,6 @@ defineProps<{
   color: var(--v-theme-background);
 
   .svg-icon {
-    // fill: var(--v-theme-background);
     stroke: var(--v-theme-background);
   }
 }
@@ -93,8 +108,51 @@ defineProps<{
   border: 1px solid var(--v-theme-primary);
 
   .svg-icon {
-    // fill: var(--v-theme-primary);
     stroke: var(--v-theme-primary);
+  }
+}
+
+#info-tooltip {
+  &.v-overlay--active.light-overlay {
+    background: rgba($primary-color-light, 0.7);
+  }
+
+  &.v-overlay--active.dark-overlay {
+    background: rgba($primary-color-dark, 0.7);
+  }
+
+  .v-overlay__content {
+    background: $accent-color;
+    color: $primary-color-dark;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .warning-icon {
+      fill: $primary-color-dark;
+      width: 32px;
+      height: 32px;
+    }
+
+    p {
+      font-size: 12px;
+      font-family: $primary-font-family;
+      line-height: 12px;
+      font-weight: 600;
+      text-align: center;
+      max-width: 200px;
+      margin: 10px 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-family: $primary-font-family;
+      line-height: 16px;
+      font-weight: 900;
+      text-align: center;
+    }
   }
 }
 </style>
