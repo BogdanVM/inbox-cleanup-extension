@@ -51,7 +51,6 @@ $height: 400px;
 
   #extensionMain {
     flex: 2;
-    padding: 28px 12px;
     display: flex;
     flex-direction: column;
   }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /// <reference types="chrome"/>
-import GoogleLogo from '@/assets/google_logo.png';
+import { GoogleLogo } from '@Assets';
 import { Checkbox, useAuthStore } from '@Auth';
 import { useAppStore } from '@Core';
 import { AppRoutes } from '@Router';
@@ -60,6 +60,7 @@ const onSignIn = () => {
   align-items: center;
   height: 100%;
   flex: 1;
+  padding: 28px 12px;
 
   h3 {
     font-weight: 900;

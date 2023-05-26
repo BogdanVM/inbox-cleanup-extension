@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import DarkThemeIcon from '@/assets/dark_theme.svg';
-import LightThemeIcon from '@/assets/light_theme.svg';
+import { DarkThemeIcon, LightThemeIcon } from '@Assets';
 import { useAppStore } from '@Core';
 import { SwitchToggle } from '@Shared';
 

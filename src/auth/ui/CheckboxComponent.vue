@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CheckedIcon from '@/assets/checked.svg';
+import { CheckedIcon } from '@Assets';
 import { defineProps, reactive, ref } from 'vue';
 
 defineEmits(['changed']);
@@ -67,6 +67,7 @@ label {
     top: 0;
     left: 0;
     z-index: 1;
+    fill: $accent-color;
   }
 }
 </style>
