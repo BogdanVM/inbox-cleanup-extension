@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { InfoCircle } from '@Assets';
-import { defineProps } from 'vue';
+import { defineEmits, defineProps } from 'vue';
 
+defineEmits(['option-selected']);
 defineProps<{
+  id: string;
   active: boolean;
   icon: string;
   name: string;
@@ -11,7 +13,11 @@ defineProps<{
 
 <template>
   <div class="selectable-option-wrapper">
-    <div class="selectable-option" :class="active ? 'active' : 'not-active'">
+    <div
+      class="selectable-option"
+      :class="active ? 'active' : 'not-active'"
+      @click="$emit('option-selected', id)"
+    >
       <div class="icon-wrapper">
         <component class="svg-icon" v-if="typeof icon === 'object'" :is="icon" />
         <img v-if="typeof icon === 'string'" :src="icon" alt="Icon" />
