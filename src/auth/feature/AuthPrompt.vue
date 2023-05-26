@@ -60,6 +60,7 @@ const onSignIn = () => {
   align-items: center;
   height: 100%;
   flex: 1;
+  padding: 28px 12px;
 
   h3 {
     font-weight: 900;

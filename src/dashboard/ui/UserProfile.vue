@@ -23,6 +23,7 @@ import { OptionsIcon, UserAvatar } from '@Assets';
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
 
   .user-info {
     display: flex;
