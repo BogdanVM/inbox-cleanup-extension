@@ -13,7 +13,7 @@ defineProps<{
   <div class="selectable-option-wrapper">
     <div class="selectable-option" :class="active ? 'active' : 'not-active'">
       <div class="icon-wrapper">
-        <component v-if="typeof icon === 'object'" :is="icon" />
+        <component class="svg-icon" v-if="typeof icon === 'object'" :is="icon" />
         <img v-if="typeof icon === 'string'" :src="icon" alt="Icon" />
       </div>
       <div class="option-name">
@@ -74,11 +74,21 @@ defineProps<{
 .selectable-option.active {
   background: var(--v-theme-primary);
   color: var(--v-theme-background);
+
+  .svg-icon {
+    // fill: var(--v-theme-background);
+    stroke: var(--v-theme-background);
+  }
 }
 
 .selectable-option.not-active {
   background: var(--v-theme-background);
   color: var(--v-theme-primary);
   border: 1px solid var(--v-theme-primary);
+
+  .svg-icon {
+    // fill: var(--v-theme-primary);
+    stroke: var(--v-theme-primary);
+  }
 }
 </style>

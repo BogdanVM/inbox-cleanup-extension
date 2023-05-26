@@ -7,7 +7,7 @@ import { SelectableOption } from '@Dashboard';
   <div class="action-picker">
     <p>Choose the desired actions from below.</p>
     <div class="options-wrapper">
-      <SelectableOption :active="false" :icon="SocialIcon" name='Cleanup "SOCIAL"' />
+      <SelectableOption :active="true" :icon="SocialIcon" name='Cleanup "SOCIAL"' />
       <SelectableOption :active="true" :icon="PromotionalIcon" name='Cleanup "Promotional"' />
     </div>
   </div>
