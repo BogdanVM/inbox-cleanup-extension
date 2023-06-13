@@ -6,3 +6,4 @@ export { default as Logo } from './logo.svg';
 export { default as PromotionalIcon } from './no_ads.svg';
 export { default as OptionsIcon } from './options.svg';
 export { default as SocialIcon } from './share.svg';
+export { default as WarningIcon } from './warning.svg';
