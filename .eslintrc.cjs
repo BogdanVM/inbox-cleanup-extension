@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    'no-console': 'warn',
+    'no-console': 'error',
     'arrow-parens': ['warn', 'always'],
     camelcase: ['error', { properties: 'never', ignoreImports: true }],
     'comma-spacing': ['error', { before: false, after: true }],
@@ -28,14 +28,23 @@ module.exports = {
     'key-spacing': 'warn',
     'max-lines': ['error', 300],
     'prefer-const': ['error', { destructuring: 'any' }],
-    quotes: ['error', 'single'],
+    quotes: ['warn', 'single'],
     'require-await': 'warn',
     semi: ['error', 'always'],
     'no-else-return': ['warn', { allowElseIf: true }],
     'no-shadow': 'warn',
     'no-trailing-spaces': 'warn',
     'no-unneeded-ternary': ['warn', { defaultAssignment: false }],
-    'no-unused-vars': ['warn', { args: 'none', argsIgnorePattern: '^_$', vars: 'local' }],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        vars: 'local'
+      }
+    ],
     'no-unreachable': 'error',
     'no-var': 'error'
   }
